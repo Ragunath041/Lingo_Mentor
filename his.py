@@ -2,16 +2,6 @@ import openai
 import pyttsx3
 import speech_recognition as sr
 import json
-import pyaudio
-import wave
-
-CHUNK = 1024
-FORMAT = pyaudio.paInt16
-CHANNELS = 1
-RATE = 44100
-RECORD_SECONDS = 1  
-OUTPUT_FILENAME = "recorded_audio.wav"
-
 def rec():
     init_rec = sr.Recognizer()
     print("Let's speak!!")
@@ -41,7 +31,7 @@ def maleVoice(text):
     engine.say(text)
     engine.runAndWait()
 
-openai.api_key = "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"
+openai.api_key = "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"
 messages = [{"role": "system", "content": "Conversation with English Professor"}]
 
 while True:
