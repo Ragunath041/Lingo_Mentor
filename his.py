@@ -9,15 +9,15 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 1  # Increase recording time to 10 seconds
+RECORD_SECONDS = 1  
 OUTPUT_FILENAME = "recorded_audio.wav"
 
 def rec():
     init_rec = sr.Recognizer()
     print("Let's speak!!")
     with sr.Microphone() as source:
-        init_rec.adjust_for_ambient_noise(source)  # Adjust for ambient noise
-        audio_data = init_rec.listen(source)  # Listen for speech input
+        init_rec.adjust_for_ambient_noise(source)  
+        audio_data = init_rec.listen(source)  
         print("Recognizing your text.............")
         try:
             text = init_rec.recognize_google(audio_data)
@@ -49,7 +49,6 @@ while True:
     if user_input:
         messages.append({"role": "user", "content": user_input})
         if user_input.lower() in ["thank you", "thankyou", "stop"]:
-            # Save conversation history to a JSON file
             with open("conversation_history.json", "w") as file:
                 json.dump(messages, file, indent=4)
             print("Conversation ended. Conversation history saved to conversation_history.json")
