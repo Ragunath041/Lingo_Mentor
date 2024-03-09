@@ -31,8 +31,8 @@ def maleVoice(text):
     engine.say(text)
     engine.runAndWait()
 
-openai.api_key = "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"
-messages = [{"role": "system", "content": "Conversation with English Professor"}]
+openai.api_key = "API-KEY"
+messages = [{"role": "system", "content": "HR INTERVIEW"}]
 
 while True:
     user_input = rec() 
